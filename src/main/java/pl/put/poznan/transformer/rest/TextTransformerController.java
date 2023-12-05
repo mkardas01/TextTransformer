@@ -8,39 +8,41 @@ import java.util.Arrays;
 
 
 @RestController
-@RequestMapping("/{text}")
 public class TextTransformerController {
 
     private static final Logger logger = LoggerFactory.getLogger(TextTransformerController.class);
 
-    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public String get(@PathVariable String text,
-                              @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
+    /*Endpoint implementing text transformation
+    Usage: localhost:8080/transform?transforms=A&text=B
+    Where:
+    A - transformation type: [upper, lower, capitalize]
+    B - transformation text
+
+    Return: Transformed text - string
+     */
+    @RequestMapping(value = "/transform", method = RequestMethod.GET)
+    public String textTransform(@RequestParam(value="transforms", defaultValue="upper") String transforms,
+                      @RequestParam(value="text", defaultValue="test")String text){
 
         // log the parameters
         logger.debug(text);
-        logger.debug(Arrays.toString(transforms));
+        logger.debug(transforms);
 
         // perform the transformation, you should run your logic here, below is just a silly example
         TextTransformer transformer = new TextTransformer(transforms);
         return transformer.transform(text);
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-    public String post(@PathVariable String text,
-                      @RequestBody String[] transforms) {
+    /*Endpoint for tests
 
-        // log the parameters
-        logger.debug(text);
-        logger.debug(Arrays.toString(transforms));
+    Usage: localhost:8080/test
 
-        // perform the transformation, you should run your logic here, below is just a silly example
-        TextTransformer transformer = new TextTransformer(transforms);
-        return transformer.transform(text);
+    Return: "test ok"
+     */
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String test(){
+        return "test ok";
     }
-
-
-
 }
 
 
