@@ -4,8 +4,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.transformer.logic.TextTransformer;
 
-import java.util.Arrays;
-
 
 @RestController
 public class TextTransformerController {
