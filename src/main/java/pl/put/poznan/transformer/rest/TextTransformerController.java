@@ -3,6 +3,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.transformer.logic.Inverter;
+import pl.put.poznan.transformer.logic.Numberer;
 import pl.put.poznan.transformer.logic.transformers.TextTransformer;
 
 import java.util.Arrays;
@@ -31,7 +32,6 @@ public class TextTransformerController {
         logger.debug(text);
         logger.debug(Arrays.toString(transforms));
 
-        //perform the transformation, you should run your logic here, below is just a silly example
         TextTransformer transformer = new TextTransformer(transforms);
         return transformer.transform(text);
     }
@@ -97,10 +97,8 @@ public class TextTransformerController {
         // log the parameters
         logger.debug(text);
 
-        //TODO: change lines when Numberer implemented
-        //Inverter inverter = new Inverter (text);
-        //return inverter.transform('text');
-        return("To be done");
+        Numberer numberer = new Numberer();
+        return numberer.convert (text);
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
