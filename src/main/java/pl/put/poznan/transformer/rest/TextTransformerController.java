@@ -52,10 +52,8 @@ public class TextTransformerController {
         // log the parameters
         logger.debug(text);
 
-        //TODO: change lines when Inverter implemented
         Inverter inverter = new Inverter (text);
         return inverter.transform(text);
-        //return(text);
     }
 
     @RequestMapping(value = "/shortcut", method = RequestMethod.GET)
