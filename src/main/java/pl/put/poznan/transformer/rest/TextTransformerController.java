@@ -98,9 +98,7 @@ public class TextTransformerController {
         logger.debug(text);
 
         Numberer numberer = new Numberer();
-        numberer.convert (text);
-        //return inverter.transform('text');
-        return("To be done");
+        return numberer.convert (text);
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
