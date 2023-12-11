@@ -12,6 +12,7 @@ public class TextTransformer implements TextTransformation {
         this.transformers = initializeTransformers(transforms);
     }
 
+    //initialize TextTransformation depends on transforms
     private TextTransformation[] initializeTransformers(String[] transforms) {
         TextTransformation[] transformers = new TextTransformation[transforms.length];
         for (int i = 0; i < transforms.length; i++) {
@@ -30,11 +31,13 @@ public class TextTransformer implements TextTransformation {
         return transformers;
     }
 
+    //every TextTransformations transforms text
     @Override
     public String transform(String text) {
         for (TextTransformation transformer : transformers) {
             text = transformer.transform(text);
         }
+        //returns text after all transformations
         return text;
     }
 }
