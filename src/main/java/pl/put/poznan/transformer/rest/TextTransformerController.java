@@ -52,7 +52,7 @@ public class TextTransformerController {
         // log the parameters
         logger.debug(text);
 
-        Inverter inverter = new Inverter (text);
+        Inverter inverter = new Inverter();
         return inverter.transform(text);
     }
 
