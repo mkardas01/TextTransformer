@@ -2,11 +2,6 @@ package pl.put.poznan.transformer.logic;
 
 public class Inverter {
 
-    private final String text;
-    public Inverter(String text) {
-        this.text = text;
-    }
-
     public String transform(String textToTransform) {
         // Transform the input text into a character array
         char[] oldText = textToTransform.toCharArray();
