@@ -22,11 +22,14 @@ public class ShortExtender {
         shortcutsDict.put("prof.", "profesor");
         shortcutsDict.put("dr", "doktor");
         shortcutsDict.put("mgr", "magister");
-        shortcutsDict.put("inż", "inżynier");
+        shortcutsDict.put("inż.", "inżynier");
 
     }
 
     public String transform(String input){
+        if (input.isEmpty()){
+            return input;
+        }
         this.setup();
         String[] words = input.split("\\s+");
         StringBuilder convertedText = new StringBuilder();
