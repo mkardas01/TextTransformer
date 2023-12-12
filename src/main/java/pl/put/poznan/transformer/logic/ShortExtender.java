@@ -6,6 +6,7 @@ public class ShortExtender {
     /*
     Function extends shortcuts, provided by user
     Phrases and shortcuts are stored using HashMap
+    Function is case-sensitive(on the first position)
     Parameters:
         input(String) text provided by user
     Returns:
@@ -21,17 +22,32 @@ public class ShortExtender {
         shortcutsDict.put("prof.", "profesor");
         shortcutsDict.put("dr", "doktor");
         shortcutsDict.put("mgr", "magister");
+        shortcutsDict.put("inż", "inżynier");
+
     }
 
     public String transform(String input){
         this.setup();
+        String[] words = input.split("\\s+");
+        StringBuilder convertedText = new StringBuilder();
 
-        for (String key : this.shortcutsDict.keySet()){
-            String shortcut = this.shortcutsDict.get(key);
-            if (input.toLowerCase().contains(key)){
-                input = input.toLowerCase().replace(key, shortcut);
+        for (String word : words) {
+            String correctedWord = word;
+            String lowercaseWord = word.toLowerCase();
+
+            if (shortcutsDict.containsKey(lowercaseWord)) {
+                correctedWord = shortcutsDict.get(lowercaseWord);
             }
+            if (Character.isUpperCase(word.charAt(0))) {
+                correctedWord = toTitleCase(correctedWord);
+            }
+            convertedText.append(correctedWord).append(" ");
         }
-        return input;
+        return convertedText.toString().trim();
     }
+
+    private static String toTitleCase(String word) {
+        return Character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase();
+    }
+
 }
