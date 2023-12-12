@@ -4,9 +4,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.transformer.logic.Inverter;
 import pl.put.poznan.transformer.logic.Numberer;
+import pl.put.poznan.transformer.logic.ShortCutter;
+import pl.put.poznan.transformer.logic.ShortExtender;
 import pl.put.poznan.transformer.logic.transformers.TextTransformer;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 
 @RestController
@@ -60,25 +63,32 @@ public class TextTransformerController {
     /*Endpoint implementing text transformation
     Usage: localhost:8080/shortcut?type=A&text=B
     Where:
-    A - when 1:  np. -> na przykład
-        when 0:  na przykład -> np.
+    A - when extend:  np. -> na przykład
+        when shortcut:  na przykład -> np.
     B - transformation text
     Note: In URL standard " " (space) is coded as %20, if you want text to me "Some text" code it
     in url as Some%20text
 
     Return: Transformed text - string
      */
-    public String textShortcut (@RequestParam(value="type", defaultValue="1")boolean type,
+    public String textShortcut (@RequestParam(value="type", defaultValue="short, extend")String transforms,
                                 @RequestParam(value="text", defaultValue="test")String text){
 
         // log the parameters
         logger.debug(text);
 
-        //TODO: change lines when Shortcutter implemented
-        //Inverter inverter = new Inverter (text);
-        //return inverter.transform('text');
-        return("To be done");
+        if (Objects.equals(transforms, "short")){
+            ShortCutter inverter = new ShortCutter();
+            return inverter.transform(text);
+        } else if (Objects.equals(transforms, "extend")) {
+            ShortExtender inverter = new ShortExtender();
+            return inverter.transform(text);
+
+        }
+        ShortCutter inverter = new ShortCutter();
+        return inverter.transform(text);
     }
+
 
     @RequestMapping(value = "/number", method = RequestMethod.GET)
     /*Endpoint implementing text transformation
