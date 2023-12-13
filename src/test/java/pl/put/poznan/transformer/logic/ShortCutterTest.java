@@ -3,49 +3,50 @@ package pl.put.poznan.transformer.logic;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pl.put.poznan.transformer.logic.decorators.ShortCutterDecorator;
 
 
 class ShortCutterTest {
 
-    ShortCutter cutter;
+    TextTransformer transformer;
     @BeforeEach
     public void init(){
-        cutter = new ShortCutter();
+        transformer = new TextTransformer (new String[]{"short"});
     }
     @Test
     public void testCut1(){
-        assertEquals(cutter.transform("na przykład"), "np.");
+        assertEquals(transformer.transform("na przykład"), "np.");
     }
 
     @Test
     public void testCut2(){
-        assertEquals(cutter.transform("między innymi"), "m.in.");
+        assertEquals(transformer.transform("między innymi"), "m.in.");
     }
 
     @Test
     public void testCut3(){
-        assertEquals(cutter.transform("profesor"), "prof.");
+        assertEquals(transformer.transform("profesor"), "prof.");
     }
 
     @Test
     public void testCut4(){
-        assertEquals(cutter.transform("inżynier"), "inż.");
+        assertEquals(transformer.transform("inżynier"), "inż.");
     }
 
     @Test
     public void testCutSentence1(){
-        assertEquals(cutter.transform("Test Doktor i na przykład"), "test dr i np.");
+        assertEquals(transformer.transform("Test Doktor i na przykład"), "test dr i np.");
     }
 
 
     @Test
     public void testCutSentence2(){
-        assertEquals(cutter.transform("Test Inżynier i inżynier lub INŻYNIER i MaGister"), "test inż. i inż. lub inż. i mgr");
+        assertEquals(transformer.transform("Test Inżynier i inżynier lub INŻYNIER i MaGister"), "test inż. i inż. lub inż. i mgr");
     }
 
     @Test
     public void testCutBlank(){
-        assertEquals(cutter.transform(""), "");
+        assertEquals(transformer.transform(""), "");
     }
 
 }

@@ -1,9 +1,10 @@
-package pl.put.poznan.transformer.logic;
+package pl.put.poznan.transformer.logic.decorators;
 import org.apache.commons.lang3.math.NumberUtils;
+import pl.put.poznan.transformer.logic.TextTransformation;
 
 import java.util.Arrays;
 
-public class Numberer {
+public class NumbererDecorator implements TextTransformation {
     private static final String[] hundredsNames ={
             "",
             "sto",
@@ -52,7 +53,8 @@ public class Numberer {
             "dziewiętnaście",
             "dwadzieścia"
     };
-    public String convert(String input) {
+    @Override
+    public String transform(String input) {
         String[] text = input.split("\\s+");
         for (int i = 0; i < text.length; i++) {
             StringBuilder numberText = new StringBuilder();

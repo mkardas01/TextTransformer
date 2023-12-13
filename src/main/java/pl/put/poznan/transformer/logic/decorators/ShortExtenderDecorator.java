@@ -1,8 +1,11 @@
-package pl.put.poznan.transformer.logic;
+package pl.put.poznan.transformer.logic.decorators;
+
+import pl.put.poznan.transformer.logic.TextTransformation;
+import pl.put.poznan.transformer.logic.TextTransformer;
 
 import java.util.HashMap;
 
-public class ShortExtender {
+public class ShortExtenderDecorator implements TextTransformation {
     /*
     Function extends shortcuts, provided by user
     Phrases and shortcuts are stored using HashMap

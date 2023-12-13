@@ -1,4 +1,6 @@
-package pl.put.poznan.transformer.logic.transformers;
+package pl.put.poznan.transformer.logic.decorators;
+
+import pl.put.poznan.transformer.logic.TextTransformation;
 
 public class CapitalizeDecorator implements TextTransformation {
 
