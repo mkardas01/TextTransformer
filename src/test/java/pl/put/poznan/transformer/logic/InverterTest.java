@@ -1,50 +1,50 @@
 package pl.put.poznan.transformer.logic;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pl.put.poznan.transformer.logic.decorators.InverterDecotaror;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class InverterTest {
+    TextTransformer transformer;
+    @BeforeEach
+    public void init(){
+        transformer = new TextTransformer (new String[]{"inverse"});
+    }
     @Test
     public void testTransformWithLowerCase() {
-        Inverter inverter = new Inverter();
-        assertEquals("elpmaxe", inverter.transform("example"));
+        assertEquals("elpmaxe", transformer.transform("example"));
     }
 
     @Test
     public void testTransformWithUpperCase() {
-        Inverter inverter = new Inverter();
-        assertEquals("Elpmaxe", inverter.transform("Example"));
+        assertEquals("Elpmaxe", transformer.transform("Example"));
     }
 
     @Test
     public void testTransformWithMixedCase() {
-        Inverter inverter = new Inverter();
-        assertEquals("DlrowOlleh", inverter.transform("HelloWorld"));
+        assertEquals("DlrowOlleh", transformer.transform("HelloWorld"));
     }
 
     @Test
     public void testTransformWithSpaces() {
-        Inverter inverter = new Inverter();
-        assertEquals("GnirtS tset", inverter.transform("Test String"));
+        assertEquals("GnirtS tset", transformer.transform("Test String"));
     }
 
     @Test
     public void testTransformWithSpaceMixedCase() {
-        Inverter inverter = new Inverter();
-        assertEquals("Tset TSeJ OT", inverter.transform("To jeST TeST"));
+        assertEquals("Tset TSeJ OT", transformer.transform("To jeST TeST"));
     }
 
     @Test
     public void testTransformWithSpecialCharacters() {
-        Inverter inverter = new Inverter();
-        assertEquals("#@!321", inverter.transform("123!@#"));
+        assertEquals("#@!321", transformer.transform("123!@#"));
     }
 
     @Test
     public void testTransformWithEmptyString() {
-        Inverter inverter = new Inverter();
-        assertEquals("", inverter.transform(""));
+        assertEquals("", transformer.transform(""));
     }
 
 }

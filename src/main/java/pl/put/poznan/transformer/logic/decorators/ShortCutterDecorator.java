@@ -1,7 +1,10 @@
-package pl.put.poznan.transformer.logic;
+package pl.put.poznan.transformer.logic.decorators;
+import pl.put.poznan.transformer.logic.TextTransformation;
+import pl.put.poznan.transformer.logic.TextTransformer;
+
 import java.util.HashMap;
 
-public class ShortCutter {
+public class ShortCutterDecorator implements TextTransformation {
     /*
     Function shortens selected phrases
     Phrases and shortcuts are stored using HashMap
@@ -23,7 +26,7 @@ public class ShortCutter {
         shortcutsDict.put("magister", "mgr");
         shortcutsDict.put("inżynier", "inż.");
     }
-
+    @Override
     public String transform(String input){
         this.setup();
 
