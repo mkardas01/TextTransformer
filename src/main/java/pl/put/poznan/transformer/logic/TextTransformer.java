@@ -41,6 +41,9 @@ public class TextTransformer implements TextTransformation {
                         case "number":
                             transformers[i] = new NumbererDecorator ();
                             break;
+                        case "repetition":
+                            transformers[i] = new EliminateRepetitionDecorator ();
+                            break;
                     }
                 }
 

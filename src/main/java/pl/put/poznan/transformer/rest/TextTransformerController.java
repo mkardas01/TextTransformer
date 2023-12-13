@@ -15,7 +15,7 @@ public class TextTransformerController {
     /*Endpoint implementing text transformation
     Usage: localhost:8080/transform?transforms=A&text=B
     Where:
-    A - transformation type: [upper, lower, capitalize, inverse, short, extend, number]
+    A - transformation type: [upper, lower, capitalize, inverse, short, extend, number, repetition]
     B - transformation text
     Note: In URL standard " " (space) is coded as %20, if you want text to me "Some text" code it
     in url as Some%20text
