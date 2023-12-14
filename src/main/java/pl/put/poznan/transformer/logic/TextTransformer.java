@@ -4,8 +4,12 @@ import pl.put.poznan.transformer.logic.decorators.*;
 
 import java.util.Arrays;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class TextTransformer implements TextTransformation {
 
+    private static final Logger logger = LoggerFactory.getLogger(TextTransformation.class);
     private final String transforms;
     private final TextTransformation[] transformers;
 
@@ -17,6 +21,7 @@ public class TextTransformer implements TextTransformation {
 
     //initialize TextTransformation depends on transforms
     private TextTransformation[] initializeTransformers(String[] transforms) {
+        logger.info("Initialize transformers");
         TextTransformation[] transformers = new TextTransformation[transforms.length];
                 for (int i = 0; i < transforms.length; i++) {
                     switch (transforms[i]) {
@@ -45,6 +50,7 @@ public class TextTransformer implements TextTransformation {
                             transformers[i] = new EliminateRepetitionDecorator ();
                             break;
                     }
+                    logger.debug("Added {}", transformers[i]);
                 }
 
         return transformers;
@@ -55,7 +61,9 @@ public class TextTransformer implements TextTransformation {
     public String transform(String text) {
         for (TextTransformation transformer : transformers) {
             text = transformer.transform(text);
+            logger.debug("text: {} after: {}", text, transformer);
         }
+        logger.info("text after all transforms: {}", text);
         //returns text after all transformations
         return text;
     }

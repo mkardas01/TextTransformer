@@ -1,7 +1,6 @@
 package pl.put.poznan.transformer.logic.decorators;
 
 import pl.put.poznan.transformer.logic.TextTransformation;
-import pl.put.poznan.transformer.logic.TextTransformer;
 
 import java.util.HashMap;
 
