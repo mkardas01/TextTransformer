@@ -1,9 +1,6 @@
 package pl.put.poznan.transformer.logic.decorators;
 
 import pl.put.poznan.transformer.logic.TextTransformation;
-
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Objects;
 
 public class EliminateRepetitionDecorator implements TextTransformation {
