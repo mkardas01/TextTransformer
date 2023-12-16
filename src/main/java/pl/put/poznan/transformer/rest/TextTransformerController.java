@@ -6,9 +6,11 @@ import pl.put.poznan.transformer.logic.TextTransformer;
 
 import java.util.Arrays;
 
-
 @RestController
 public class TextTransformerController {
+    /**
+     *Controlling the Rest API
+     */
 
     private static final Logger logger = LoggerFactory.getLogger(TextTransformerController.class);
     @RequestMapping(value = "/transform", method = RequestMethod.GET)

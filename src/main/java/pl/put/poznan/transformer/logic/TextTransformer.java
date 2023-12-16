@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class TextTransformer implements TextTransformation {
 
     private static final Logger logger = LoggerFactory.getLogger(TextTransformation.class);
-    private final String transforms;
+    public final String transforms;
     private final TextTransformation[] transformers;
 
     public TextTransformer(String[] transforms) {
@@ -38,10 +38,10 @@ public class TextTransformer implements TextTransformation {
                             transformers[i] = new InverterDecotaror ();
                             break;
                         case "short":
-                            transformers[i] = new ShortCutterDecorator();
+                            transformers[i] = new ShortCutterDecorator ();
                             break;
                         case "extend":
-                            transformers[i] = new ShortExtenderDecorator();
+                            transformers[i] = new ShortExtenderDecorator ();
                             break;
                         case "number":
                             transformers[i] = new NumbererDecorator ();
