@@ -35,7 +35,7 @@ public class TextTransformer implements TextTransformation {
                             transformers[i] = new CapitalizeDecorator ();
                             break;
                         case "inverse":
-                            transformers[i] = new InverterDecotaror ();
+                            transformers[i] = new InverseDecorator ();
                             break;
                         case "short":
                             transformers[i] = new ShortCutterDecorator ();
