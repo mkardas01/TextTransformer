@@ -11,9 +11,11 @@ import pl.put.poznan.transformer.logic.transformers.TextTransformer;
 import java.util.Arrays;
 import java.util.Objects;
 
-
 @RestController
 public class TextTransformerController {
+    /**
+     *Controlling the Rest API
+     */
 
     private static final Logger logger = LoggerFactory.getLogger(TextTransformerController.class);
     @RequestMapping(value = "/transform", method = RequestMethod.GET)

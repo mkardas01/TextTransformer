@@ -2,16 +2,18 @@ package pl.put.poznan.transformer.logic;
 
 import java.util.HashMap;
 
+/**
+ Function extends shortcuts, provided by user
+ Phrases and shortcuts are stored using HashMap
+ Function is case-sensitive(on the first position)
+ Parameters:
+ input(String) text provided by user
+ Returns:
+ input(String) transformed input
+ */
+
+
 public class ShortExtender {
-    /*
-    Function extends shortcuts, provided by user
-    Phrases and shortcuts are stored using HashMap
-    Function is case-sensitive(on the first position)
-    Parameters:
-        input(String) text provided by user
-    Returns:
-        input(String) transformed input
-    */
 
     private final HashMap<String, String> shortcutsDict = new HashMap<>();
 
