@@ -2,11 +2,10 @@ package pl.put.poznan.transformer.logic;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pl.put.poznan.transformer.logic.decorators.InverseDecorator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InverterTest {
+class InverseTest {
     TextTransformer transformer;
     @BeforeEach
     public void init(){
