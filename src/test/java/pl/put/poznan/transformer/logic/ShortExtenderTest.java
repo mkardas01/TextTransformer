@@ -2,52 +2,53 @@ package pl.put.poznan.transformer.logic;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pl.put.poznan.transformer.logic.decorators.ShortExtenderDecorator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShortExtenderTest {
-    ShortExtender extender;
+    TextTransformer transformer;
     @BeforeEach
     public void init(){
-        extender = new ShortExtender();
+        transformer = new TextTransformer (new String[]{"extend"});
     }
     @Test
     public void testCut1(){
-        assertEquals(extender.transform("Np."), "Na przykład");
+        assertEquals(transformer.transform("Np."), "Na przykład");
     }
 
     @Test
     public void testCut2(){
-        assertEquals(extender.transform("M.in."), "Między innymi");
+        assertEquals(transformer.transform("M.in."), "Między innymi");
     }
 
     @Test
     public void testCut3(){
-        assertEquals(extender.transform("dr"), "doktor");
+        assertEquals(transformer.transform("dr"), "doktor");
     }
 
     @Test
     public void testCut4(){
-        assertEquals(extender.transform("np."), "na przykład");
+        assertEquals(transformer.transform("np."), "na przykład");
     }
 
     @Test
     public void testCutSentence1(){
-        assertEquals(extender.transform("Test Dr i np."), "Test Doktor i na przykład");
+        assertEquals(transformer.transform("Test Dr i np."), "Test Doktor i na przykład");
     }
 
     @Test
     public void testCutSentence2(){
-        assertEquals(extender.transform("test Dr i np."), "test Doktor i na przykład");
+        assertEquals(transformer.transform("test Dr i np."), "test Doktor i na przykład");
     }
 
     @Test
     public void testCutSentence3(){
-        assertEquals(extender.transform("tEST Inż. i inż. lub I Mgr"), "tEST Inżynier i inżynier lub I Magister");
+        assertEquals(transformer.transform("tEST Inż. i inż. lub I Mgr"), "tEST Inżynier i inżynier lub I Magister");
     }
 
     @Test
     public void testCutBlank(){
-        assertEquals(extender.transform(""), "");
+        assertEquals(transformer.transform(""), "");
     }
 }

@@ -1,13 +1,10 @@
-package pl.put.poznan.transformer.logic;
+package pl.put.poznan.transformer.logic.decorators;
 
-public class Inverter {
+import pl.put.poznan.transformer.logic.TextTransformation;
 
-    private final String text;
-    public Inverter(String text) {
-        this.text = text;
-    }
-
-    public String transform(String textToTransform) {
+public class InverterDecotaror implements TextTransformation {
+    @Override
+    public String transform(String textToTransform){
         // Transform the input text into a character array
         char[] oldText = textToTransform.toCharArray();
 
@@ -31,7 +28,6 @@ public class Inverter {
                 newText[i] = currentChar;
             }
         }
-
         // Return text after inversion
         return new String(newText);
     }
