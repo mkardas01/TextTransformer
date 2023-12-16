@@ -1,5 +1,7 @@
 package pl.put.poznan.transformer.logic.decorators;
 
+import pl.put.poznan.transformer.logic.TextTransformation;
+
 import java.util.HashMap;
 
 /**
@@ -13,7 +15,7 @@ import java.util.HashMap;
  */
 
 
-public class ShortExtender {
+public class ShortExtenderDecorator implements TextTransformation {
 
     private final HashMap<String, String> shortcutsDict = new HashMap<>();
 
