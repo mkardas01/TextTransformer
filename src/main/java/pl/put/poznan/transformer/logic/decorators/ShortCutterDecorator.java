@@ -3,20 +3,13 @@ import pl.put.poznan.transformer.logic.TextTransformation;
 
 import java.util.HashMap;
 
-/**
- Function shortens selected phrases
- Phrases and shortcuts are stored using HashMap
- Function is not case-sensitive
- Parameters:
- input(String) text provided by user
- Returns:
- input(String) transformed input
- */
 
 public class ShortCutterDecorator implements TextTransformation {
 
     private final HashMap<String, String> shortcutsDict = new HashMap<>();
-
+/**
+ * Function set up the shortcuts map
+ */
     private void setup(){
         shortcutsDict.put("na przykład", "np.");
         shortcutsDict.put("między innymi", "m.in.");
@@ -27,6 +20,13 @@ public class ShortCutterDecorator implements TextTransformation {
         shortcutsDict.put("inżynier", "inż.");
     }
 
+/**
+ * Function shortens selected phrases
+ * Phrases and shortcuts are stored using HashMap
+ * Function is not case-sensitive
+ * @param  input (String) - Text provided by the user.
+ * @return  transformedText (String) - Transformed input.
+ */
     public String transform(String input){
         this.setup();
 

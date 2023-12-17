@@ -3,16 +3,13 @@ package pl.put.poznan.transformer.logic.decorators;
 import pl.put.poznan.transformer.logic.TextTransformation;
 import java.util.Objects;
 
-/**
- *  Function removes adjacent repeated characters in the input text
- *             Function is not case-sensitive
- *             Parameters:
- *                 input(String) text provided by user
- *             Returns:
- *                 input(String) transformed input
- */
-
 public class EliminateRepetitionDecorator implements TextTransformation {
+    /**
+ *  Function removes adjacent repeated characters in the input text
+ *  Function is not case-sensitive
+ *              @param  textToTransform (String) - Text provided by the user.
+ *              @return  transformedText (String) - Transformed input.
+ */
     @Override
     public String transform(String textToTransform){
 

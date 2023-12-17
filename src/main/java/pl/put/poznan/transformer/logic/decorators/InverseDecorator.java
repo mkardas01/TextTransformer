@@ -2,16 +2,16 @@ package pl.put.poznan.transformer.logic.decorators;
 
 import pl.put.poznan.transformer.logic.TextTransformation;
 
+
+public class InverseDecorator implements TextTransformation {
 /**
  * Function reverses the order of characters in the input text
  *             while preserving the case of letters at their original positions.
- *             Parameters:
- *                 input(String) text provided by user
- *             Returns:
- *                 input(String) transformed input
+ * 
+ *              @param  textToTransform (String) - Text provided by the user.
+ *              @return  transformedText (String) - Transformed input.
  */
 
-public class InverseDecorator implements TextTransformation {
     @Override
     public String transform(String textToTransform){
         // Transform the input text into a character array
