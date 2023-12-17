@@ -7,6 +7,9 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Decorator component class
+ */
 public class TextTransformer implements TextTransformation {
 
     private static final Logger logger = LoggerFactory.getLogger(TextTransformation.class);
@@ -19,7 +22,11 @@ public class TextTransformer implements TextTransformation {
 
     }
 
-    //initialize TextTransformation depends on transforms
+    /** Method used for prepare all required from user transformations
+     *
+     * @param transforms a String[] which represents all transformation to be performed
+     * @return           an TextTransformation[] with all required object instances
+     */
     private TextTransformation[] initializeTransformers(String[] transforms) {
         logger.info("Initialize transformers");
         TextTransformation[] transformers = new TextTransformation[transforms.length];
@@ -56,7 +63,8 @@ public class TextTransformer implements TextTransformation {
         return transformers;
     }
 
-    //every TextTransformations transforms text
+    /** Every TextTransformations transforms text
+     */
     @Override
     public String transform(String text) {
         for (TextTransformation transformer : transformers) {
@@ -64,7 +72,6 @@ public class TextTransformer implements TextTransformation {
             logger.debug("text: {} after: {}", text, transformer);
         }
         logger.info("text after all transforms: {}", text);
-        //returns text after all transformations
         return text;
     }
 }
