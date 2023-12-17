@@ -8,7 +8,7 @@ import java.util.Arrays;
  * The function converts numerical values into their corresponding word representations.
  *
  * Parameters:
- * @param  text (String) - Text provided by the user.
+ * @param  input (String) - Text provided by the user.
  * 
  * Returns:
  * @return  transformedText (String) - Transformed input.

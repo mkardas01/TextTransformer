@@ -7,7 +7,7 @@ import java.util.Objects;
  *  Function removes adjacent repeated characters in the input text
  *             Function is not case-sensitive
  *              * Parameters:
- *              @param  text (String) - Text provided by the user.
+ *              @param  textToTransform (String) - Text provided by the user.
  * 
  *              Returns:
  *              @return  transformedText (String) - Transformed input.
