@@ -4,13 +4,6 @@ import pl.put.poznan.transformer.logic.TextTransformation;
 
 import java.util.Arrays;
 
- /**
- * The function converts numerical values into their corresponding word representations.
- *
- * @param  input (String) - Text provided by the user.
- * @return  transformedText (String) - Transformed input.
- */
-
 public class NumbererDecorator implements TextTransformation {
     private static final String[] hundredsNames ={
             "",
@@ -60,6 +53,13 @@ public class NumbererDecorator implements TextTransformation {
             "dziewiętnaście",
             "dwadzieścia"
     };
+
+/**
+ * The function converts numerical values into their corresponding word representations.
+ *
+ * @param  input (String) - Text provided by the user.
+ * @return  transformedText (String) - Transformed input.
+ */
     @Override
     public String transform(String input) {
         String[] text = input.split("\\s+");
