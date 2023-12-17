@@ -4,6 +4,16 @@ import pl.put.poznan.transformer.logic.TextTransformation;
 
 import java.util.Arrays;
 
+ /**
+ * The function converts numerical values into their corresponding word representations.
+ *
+ * Parameters:
+ *   text (String) - Text provided by the user.
+ *
+ * Returns:
+ *   transformedText (String) - Transformed input.
+ */
+
 public class NumbererDecorator implements TextTransformation {
     private static final String[] hundredsNames ={
             "",
