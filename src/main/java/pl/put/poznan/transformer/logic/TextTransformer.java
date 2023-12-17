@@ -7,6 +7,17 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+ /**
+ * The TextTransformer class implements the TextTransformation interface
+ * and serves as a composite decorator for various text transformations.
+ *
+ * Parameters:
+ *   transforms (String[]) - Array of transformation names provided by the user.
+ *
+ * Returns:
+ *   decorator (TextTransformation[]) - Array of initialized decorators.
+ */
+
 public class TextTransformer implements TextTransformation {
 
     private static final Logger logger = LoggerFactory.getLogger(TextTransformation.class);
@@ -18,6 +29,13 @@ public class TextTransformer implements TextTransformation {
         this.transformers = initializeTransformers(transforms);
 
     }
+
+     /**
+     * Initializes TextTransformation objects based on the provided transformation names.
+     *
+     * @param transforms (String[]) - Array of transformation names provided by the user.
+     * @return decorators (TextTransformation[]) - Array of initialized decorators.
+     */
 
     //initialize TextTransformation depends on transforms
     private TextTransformation[] initializeTransformers(String[] transforms) {
@@ -56,6 +74,13 @@ public class TextTransformer implements TextTransformation {
         return transformers;
     }
 
+    /**
+     * Applies all registered TextTransformations to the input text.
+     *
+     * @param text (String) - Text provided by the user.
+     * @return transformedText (String) - Transformed input.
+     */
+    
     //every TextTransformations transforms text
     @Override
     public String transform(String text) {
