@@ -2,11 +2,8 @@ package pl.put.poznan.transformer.logic;
 
 /**
  * This interface defines the contract for text transformation decorators.
- *
- * Parameters:
- * @param  text (String) - Text provided by the user.
  * 
- * Returns:
+ * @param  text (String) - Text provided by the user.
  * @return  transformedText (String) - Transformed input.
  */
 

@@ -7,10 +7,7 @@ import java.util.Arrays;
  /**
  * The function converts numerical values into their corresponding word representations.
  *
- * Parameters:
  * @param  input (String) - Text provided by the user.
- * 
- * Returns:
  * @return  transformedText (String) - Transformed input.
  */
 

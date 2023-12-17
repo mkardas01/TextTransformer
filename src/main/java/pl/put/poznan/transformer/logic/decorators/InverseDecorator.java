@@ -5,10 +5,8 @@ import pl.put.poznan.transformer.logic.TextTransformation;
 /**
  * Function reverses the order of characters in the input text
  *             while preserving the case of letters at their original positions.
- *              Parameters:
- *              @param  textToTransform (String) - Text provided by the user.
  * 
- *              Returns:
+ *              @param  textToTransform (String) - Text provided by the user.
  *              @return  transformedText (String) - Transformed input.
  */
 

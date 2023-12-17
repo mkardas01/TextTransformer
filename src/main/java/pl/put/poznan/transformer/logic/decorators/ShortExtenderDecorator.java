@@ -8,10 +8,7 @@ import java.util.HashMap;
  *  Function extends shortcuts, provided by user
  *  Phrases and shortcuts are stored using HashMap
  *  Function is case-sensitive(on the first position)
- * Parameters:
  * @param  input (String) - Text provided by the user.
- * 
- * Returns:
  * @return  transformedText (String) - Transformed input.
  */
 

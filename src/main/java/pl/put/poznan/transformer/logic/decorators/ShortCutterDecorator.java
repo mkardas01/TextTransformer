@@ -7,10 +7,7 @@ import java.util.HashMap;
  * Function shortens selected phrases
  * Phrases and shortcuts are stored using HashMap
  * Function is not case-sensitive
- * Parameters:
  * @param  input (String) - Text provided by the user.
- * 
- * Returns:
  * @return  transformedText (String) - Transformed input.
  */
 

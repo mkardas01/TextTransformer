@@ -5,10 +5,7 @@ import pl.put.poznan.transformer.logic.TextTransformation;
 /**
  * The function changes the case of letters to uppercase.
  *
- * Parameters:
  * @param  text (String) - Text provided by the user.
- * 
- * Returns:
  * @return  transformedText (String) - Transformed input.
  */
 

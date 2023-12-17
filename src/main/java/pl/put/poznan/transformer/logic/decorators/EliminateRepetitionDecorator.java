@@ -5,11 +5,8 @@ import java.util.Objects;
 
 /**
  *  Function removes adjacent repeated characters in the input text
- *             Function is not case-sensitive
- *              * Parameters:
+ *  Function is not case-sensitive
  *              @param  textToTransform (String) - Text provided by the user.
- * 
- *              Returns:
  *              @return  transformedText (String) - Transformed input.
  */
 

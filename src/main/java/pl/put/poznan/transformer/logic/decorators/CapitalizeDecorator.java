@@ -5,10 +5,7 @@ import pl.put.poznan.transformer.logic.TextTransformation;
 /**
  * The function capitalizes the first letter of each word while leaving the remaining letters in lowercase.
  *
- * Parameters:
  * @param  text (String) - Text provided by the user.
- * 
- * Returns:
  * @return  transformedText (String) - Transformed input.
  */
 
