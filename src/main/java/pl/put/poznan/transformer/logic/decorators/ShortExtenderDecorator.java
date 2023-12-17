@@ -5,13 +5,14 @@ import pl.put.poznan.transformer.logic.TextTransformation;
 import java.util.HashMap;
 
 /**
- Function extends shortcuts, provided by user
- Phrases and shortcuts are stored using HashMap
- Function is case-sensitive(on the first position)
- Parameters:
- input(String) text provided by user
- Returns:
- input(String) transformed input
+ *  Function extends shortcuts, provided by user
+ *  Phrases and shortcuts are stored using HashMap
+ *  Function is case-sensitive(on the first position)
+ * Parameters:
+ * @param  text (String) - Text provided by the user.
+ * 
+ * Returns:
+ * @return  transformedText (String) - Transformed input.
  */
 
 

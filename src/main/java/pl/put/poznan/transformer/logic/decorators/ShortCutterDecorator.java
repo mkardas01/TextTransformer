@@ -4,13 +4,14 @@ import pl.put.poznan.transformer.logic.TextTransformation;
 import java.util.HashMap;
 
 /**
- Function shortens selected phrases
- Phrases and shortcuts are stored using HashMap
- Function is not case-sensitive
- Parameters:
- input(String) text provided by user
- Returns:
- input(String) transformed input
+ * Function shortens selected phrases
+ * Phrases and shortcuts are stored using HashMap
+ * Function is not case-sensitive
+ * Parameters:
+ * @param  text (String) - Text provided by the user.
+ * 
+ * Returns:
+ * @return  transformedText (String) - Transformed input.
  */
 
 public class ShortCutterDecorator implements TextTransformation {

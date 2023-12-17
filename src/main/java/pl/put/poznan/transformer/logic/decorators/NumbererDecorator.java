@@ -8,10 +8,10 @@ import java.util.Arrays;
  * The function converts numerical values into their corresponding word representations.
  *
  * Parameters:
- *   text (String) - Text provided by the user.
- *
+ * @param  text (String) - Text provided by the user.
+ * 
  * Returns:
- *   transformedText (String) - Transformed input.
+ * @return  transformedText (String) - Transformed input.
  */
 
 public class NumbererDecorator implements TextTransformation {

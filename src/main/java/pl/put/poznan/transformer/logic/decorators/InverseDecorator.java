@@ -5,10 +5,11 @@ import pl.put.poznan.transformer.logic.TextTransformation;
 /**
  * Function reverses the order of characters in the input text
  *             while preserving the case of letters at their original positions.
- *             Parameters:
- *                 input(String) text provided by user
- *             Returns:
- *                 input(String) transformed input
+ *              Parameters:
+ *              @param  text (String) - Text provided by the user.
+ * 
+ *              Returns:
+ *              @return  transformedText (String) - Transformed input.
  */
 
 public class InverseDecorator implements TextTransformation {

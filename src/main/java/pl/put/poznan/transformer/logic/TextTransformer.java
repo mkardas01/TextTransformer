@@ -10,12 +10,6 @@ import org.slf4j.LoggerFactory;
  /**
  * The TextTransformer class implements the TextTransformation interface
  * and serves as a composite decorator for various text transformations.
- *
- * Parameters:
- *   transforms (String[]) - Array of transformation names provided by the user.
- *
- * Returns:
- *   decorator (TextTransformation[]) - Array of initialized decorators.
  */
 
 public class TextTransformer implements TextTransformation {
