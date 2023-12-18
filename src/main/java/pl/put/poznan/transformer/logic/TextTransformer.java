@@ -7,9 +7,11 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Decorator component class
+ /**
+ * The TextTransformer class implements the TextTransformation interface
+ * and serves as a composite decorator for various text transformations.
  */
+
 public class TextTransformer implements TextTransformation {
 
     private static final Logger logger = LoggerFactory.getLogger(TextTransformation.class);
@@ -22,11 +24,14 @@ public class TextTransformer implements TextTransformation {
 
     }
 
-    /** Method used for prepare all required from user transformations
+     /**
+     * Initializes TextTransformation objects based on the provided transformation names.
      *
-     * @param transforms a String[] which represents all transformation to be performed
-     * @return           an TextTransformation[] with all required object instances
+     * @param transforms (String[]) - Array of transformation names provided by the user.
+     * @return decorators (TextTransformation[]) - Array of initialized decorators.
      */
+
+    //initialize TextTransformation depends on transforms
     private TextTransformation[] initializeTransformers(String[] transforms) {
         logger.info("Initialize transformers");
         TextTransformation[] transformers = new TextTransformation[transforms.length];
@@ -63,8 +68,14 @@ public class TextTransformer implements TextTransformation {
         return transformers;
     }
 
-    /** Every TextTransformations transforms text
+    /**
+     * Applies all registered TextTransformations to the input text.
+     *
+     * @param text (String) - Text provided by the user.
+     * @return transformedText (String) - Transformed input.
      */
+    
+    //every TextTransformations transforms text
     @Override
     public String transform(String text) {
         for (TextTransformation transformer : transformers) {
@@ -72,6 +83,7 @@ public class TextTransformer implements TextTransformation {
             logger.debug("text: {} after: {}", text, transformer);
         }
         logger.info("text after all transforms: {}", text);
+        //returns text after all transformations
         return text;
     }
 }

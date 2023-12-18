@@ -2,8 +2,14 @@ package pl.put.poznan.transformer.logic.decorators;
 
 import pl.put.poznan.transformer.logic.TextTransformation;
 
-public class CapitalizeDecorator implements TextTransformation {
 
+public class CapitalizeDecorator implements TextTransformation {
+/**
+ * The function capitalizes the first letter of each word while leaving the remaining letters in lowercase.
+ *
+ * @param  text (String) - Text provided by the user.
+ * @return  transformedText (String) - Transformed input.
+ */
     //returns capitalized text
     @Override
     public String transform(String text) {
