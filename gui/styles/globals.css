@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.comic-sans {
+    font-family: 'Comic Sans MS', cursive;
+}
+body {
+/*background: no-repeat url("https://perspektywy.pl/portal/images/aktualnosci/edukacja/2021-03-19-jacek-blazewicz-a.jpg");*/
+background-size: cover;
+background-position: center;
+margin: 0;
+height: 100vh;
+backdrop-filter: brightness(75%) blur(20px) ;
+}

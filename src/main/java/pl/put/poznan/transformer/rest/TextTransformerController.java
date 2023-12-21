@@ -1,4 +1,5 @@
 package pl.put.poznan.transformer.rest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.Arrays;
  *Controlling the Rest API
  */
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class TextTransformerController {
 
 
