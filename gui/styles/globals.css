@@ -15,3 +15,26 @@ margin: 0;
 height: 100vh;
 backdrop-filter: brightness(75%) blur(20px) ;
 }
+
+#background{
+    background-color:#1a1625;
+    color:#908d96;
+}
+
+#navbar{
+    background-color: #1a1625;
+}
+
+.card, #text{
+    background-color: #2f2b3a;
+    border-color: #908d96;
+    border-radius: 30px;
+}
+
+button{
+    background-color: #a688fa;
+}
+
+button:hover{
+    background-color: #9171f8;
+}

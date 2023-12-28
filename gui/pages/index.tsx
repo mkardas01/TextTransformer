@@ -53,17 +53,17 @@ export default function Home() {
     }
 
     return (
-        <div className={"bg-pink-200 min-h-screen"}>
+        <div className={" min-h-screen w-screen pb-14"} id={"background"}>
             <header
-                className={"bg-pink-500 text-4xl text-amber-50 sticky pl-6 py-4 font-bold shadow-[0_35px_60px_-15px_rgba(255,192,203,0.9)]"}>
+                className={"mx-12 text-4xl text-white sticky pl-6 py-4 font-bold "} id={"navbar"}>
                 TextTransformer
             </header>
-            <div className="flex mt-8 mx-12 gap-12 h-80">
-                <div className={"w-1/2 flex flex-col"}>
-                    <h1 className={"text-center"}>Wpisz tekst: </h1>
+            <div className="flex flex-col    mt-8 mx-12 gap-12 min-h-80 h-fit md:flex-row">
+                <div className={"w-full flex flex-col card py-10 px-8 md:w-1/2"}>
+                    <h1 className={"text-white text-left pb-4 font-bold px-2"}>Wpisz tekst: </h1>
                     <label form={"text"}>
                     <textarea id={"text"}
-                              className={"border-4 w-full h-full overflow-hidden p-2 text-justify comic-sans resize-none"}
+                              className={"border-2 w-full h-full overflow-hidden p-2 px-4 text-justify resize-none overflow-y-auto"}
                               rows={8}
                               value={text}
                               onChange={textSetter}
@@ -73,28 +73,41 @@ export default function Home() {
                         </p>
                     </label>
                 </div>
-                <div className={"w-1/2 border-4 p-2"}>
-                    <h1 className={"text-center"}>Wybierz transformację: </h1>
-                    <div>
+                <div className={"w-full  card py-10 px-8 md:w-1/2"} >
+                    <h1 className={"text-white text-left pb-4 pl-4 font-bold px-2"}>Wybierz transformację: </h1>
+                    <div className={"w-full h-118 p-2"}>
                         {transformations.map(trans => (
                             <Button click={AddTransformation} type={trans} key={Math.random()}/>
                         ))}
                     </div>
                 </div>
             </div>
-            <h2 className={"mt-4 mx-12"}>Wybrane transformacje:</h2>
-            <div className={"border-4 mt-4 mx-12 h-40 p-2"}>
-                <div>
-                    {Object.keys(chosenTranformations).map((key, index) => (
-                        <Button click={RemoveTransformation} id={key} key={key} type={chosenTranformations[key]} />
-                    ))}
+
+            <div className={"mx-12 mt-14"}>
+                <div className={"mt-4 card p-8 min-h-40 h-auto"}>
+                    <h2 className={"text-white mt-4 font-bold mx-2"}>Wybrane transformacje:</h2>
+                    <div className={"p-4"}>
+                        {Object.keys(chosenTranformations).map((key, index) => (
+                            <Button click={RemoveTransformation} id={key} key={key} type={chosenTranformations[key]} />
+                        ))}
+                    </div>
+                    <div className={"flex justify-end mx-6"}>
+                        <Button click={sendTextTransformRequest} type={"Wyślij"} className={"mt-4"}/>
+                    </div>
+
                 </div>
 
             </div>
-            <div className={"right mt-4 mx-12 flex flex-row"}>
-                <Button click={sendTextTransformRequest} type={"Wyślij"}/>
-                {textAfterTransformation.length>0 && <p>{textAfterTransformation}</p>}
-            </div>
+
+            {textAfterTransformation.length>0 &&
+                <div className={"mt-14 mx-12 flex flex-col justify-center items-start space-y-4 p-8 card"}>
+                    <h2 className={"text-white font-bold mt-4 px-4"}>Tekst po transformacjach:</h2>
+                    <div className={"w-full "}>
+                        <p className={"break-all ml-0 px-4 w-full"}>{textAfterTransformation}</p>
+                    </div>
+                </div>
+            }
+
         </div>
     )
 }
