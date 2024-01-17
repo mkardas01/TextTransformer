@@ -3,7 +3,14 @@ import org.apache.commons.lang3.math.NumberUtils;
 import pl.put.poznan.transformer.logic.TextTransformation;
 
 import java.util.Arrays;
-
+/**
+ Function switching selected numeric value into words.
+ works with every number, is converting every int up to 1000.
+ Parameters:
+ input(String) text provided by user
+ Returns:
+ input(String) transformed input
+ */
 public class NumbererDecorator implements TextTransformation {
     private static final String[] hundredsNames ={
             "",
