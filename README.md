@@ -5,4 +5,4 @@ Dla osób pracujących z danymi tekstowymi nasza aplikacja Text Transformer umo�
 
 ## Demo
 
-Aplikacja jest dostępna pod adresem http://text-transformer.ct8.pl/
+Aplikacja jest dostępna pod adresem http://text-transformer.ct8.pl/ (obsługuje tylko HTTP)
